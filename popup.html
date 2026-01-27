@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      margin: 0;
+    }
+    
+    h1 {
+      font-size: 14px;
+      margin: 0 0 16px 0;
+      color: #ff6b35;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .control-group {
+      margin-bottom: 16px;
+    }
+    
+    label {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 6px;
+      color: #a0a0a0;
+    }
+    
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    input[type="range"] {
+      flex: 1;
+      height: 4px;
+      background: #333;
+      border-radius: 2px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      background: #ff6b35;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    .value {
+      font-size: 12px;
+      font-weight: 600;
+      color: #ff6b35;
+      min-width: 40px;
+      text-align: right;
+    }
+    
+    .reset-btn {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      background: #333;
+      border: none;
+      border-radius: 4px;
+      color: #a0a0a0;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .reset-btn:hover {
+      background: #444;
+      color: #e0e0e0;
+    }
+    
+    .align-buttons {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .align-btn {
+      flex: 1;
+      padding: 8px;
+      background: #333;
+      border: none;
+      border-radius: 4px;
+      color: #a0a0a0;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .align-btn:hover {
+      background: #444;
+      color: #e0e0e0;
+    }
+    
+    .align-btn.active {
+      background: #ff6b35;
+      color: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚡ Claude Wide Chat</h1>
+  
+  <div class="control-group">
+    <label>Chat Width</label>
+    <div class="slider-row">
+      <input type="range" id="maxWidth" min="50" max="98" value="90">
+      <span class="value" id="maxWidthValue">90%</span>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label>Side Padding</label>
+    <div class="slider-row">
+      <input type="range" id="sidePadding" min="0" max="10" value="2">
+      <span class="value" id="sidePaddingValue">2%</span>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label>Text Alignment</label>
+    <div class="align-buttons" id="alignButtons">
+      <button class="align-btn active" data-align="left" title="Left">&#9676;</button>
+      <button class="align-btn" data-align="center" title="Center">&#9677;</button>
+      <button class="align-btn" data-align="right" title="Right">&#9678;</button>
+      <button class="align-btn" data-align="justify" title="Justify">&#9679;</button>
+    </div>
+  </div>
+  
+  <button class="reset-btn" id="reset">Reset to Defaults</button>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

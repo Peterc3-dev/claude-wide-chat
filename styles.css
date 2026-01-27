@@ -1,0 +1,65 @@
+/* Claude Wide Chat - Core Variables */
+:root {
+  --cwc-max-width: 90%;      /* How wide the chat container gets */
+  --cwc-side-padding: 2%;    /* Breathing room from screen edges */
+  --cwc-text-align: left;    /* Text alignment: left, center, right, justify */
+}
+
+/* Target Claude's chat container - force width expansion */
+/* These selectors target the main content area */
+
+/* Main conversation container */
+[class*="max-w-"] {
+  max-width: var(--cwc-max-width) !important;
+}
+
+/* The actual message thread container */
+main > div > div {
+  max-width: var(--cwc-max-width) !important;
+  padding-left: var(--cwc-side-padding) !important;
+  padding-right: var(--cwc-side-padding) !important;
+}
+
+/* Input area at bottom */
+form[class*="max-w-"] {
+  max-width: var(--cwc-max-width) !important;
+}
+
+/* Prose/message content blocks */
+.prose {
+  max-width: none !important;
+  text-align: var(--cwc-text-align) !important;
+}
+
+/* Ensure paragraphs inherit alignment */
+.prose p {
+  text-align: var(--cwc-text-align) !important;
+}
+
+/* Broader message content targeting */
+[data-message-content] p,
+[class*="message"] p,
+[class*="Message"] p,
+[class*="response"] p,
+[class*="Response"] p,
+main p {
+  text-align: var(--cwc-text-align) !important;
+}
+
+/* Target divs containing text in message areas */
+[data-message-content],
+[class*="message-content"],
+[class*="MessageContent"] {
+  text-align: var(--cwc-text-align) !important;
+}
+
+/* Catch-all for any paragraph in the main content area */
+main [class*="font-"] p,
+main [class*="text-"] p {
+  text-align: var(--cwc-text-align) !important;
+}
+
+/* Override any inline max-width constraints */
+[style*="max-width"] {
+  max-width: var(--cwc-max-width) !important;
+}
