@@ -10,7 +10,7 @@ Chrome extension that expands Claude.ai's chat width for better readability.
 - Settings sync across devices
 
 ## Install
-[Chrome Web Store](your-store-link-here) or load unpacked from this repo.
+[Chrome Web Store](https://chromewebstore.google.com/detail/claude-wide-chat/jmipcnoekninfignnkmeadoaaljnaaja?hl=en-US&utm_source=ext_sidebar) or load unpacked from this repo.
 
 ## Dev
 Built with vanilla JS/CSS. No build step - edit and reload.
