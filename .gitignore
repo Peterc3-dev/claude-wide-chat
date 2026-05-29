@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build output / packaged extension
+dist/
+build/
+*.zip
+*.crx
+*.pem
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
